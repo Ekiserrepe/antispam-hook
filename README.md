@@ -176,7 +176,7 @@ We create a Invoke transaction with our Hook Account as "Account" and NO Destina
 Hook Parameters and values will be:
 - XAH
 - Minimum value accepted in drops
-
+-------
 - XAH
 - int number as uint64 LE
 
@@ -208,7 +208,7 @@ We create a Invoke transaction with our Hook Account as "Account" and NO Destina
 Hook Parameters and values will be:
 - IOU
 - Minimum value accepted in drops
-
+-------
 - IOU
 - int number as uint64 LE
 
@@ -244,7 +244,7 @@ Hook Parameters and values will be:
 - CodeCurrency
 - ISSUER
 - Issuer Address
-
+-------
 - IOU
 - int number as uint64 LE
 - CODE
