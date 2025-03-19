@@ -1,46 +1,45 @@
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/13931549-9b00-4540-b5df-173f58bd104b">
+  <img src="https://github.com/user-attachments/assets/76fb0ad9-c43f-4be9-b2a6-0e55789ca816">
 </p>
 
 # Anti-Spam Hook (A blocking hook example for Xahau) 
 
 ## Introduction
 
-Anti-Spam Hook is a hook programmed in C for the Xahau blockchain. A hook is a series of rules that enable smart logic in Xahau, considered the smart contracts of Xahau.
+Anti-Spam Hook is a hook coded in C for the Xahau blockchain. A hook is a series of rules that enable smart logic in Xahau, considered the smart contracts for Xahau blockchain.
 
-Anti-Spam Hook is a Hook that turns your Xahau account into a wizard to block unwanted incoming payments based on the minimum amount criteria and the type of currency used. This is an example hook and this problem can be approached in other ways.
+Anti-Spam Hook is a Hook that turns your Xahau account into a wizard to block unwanted incoming payments based on the minimum amount criteria and the type of currency used. This is an example hook and this problem can be approached in many other different ways.
 
 
 ## Explanation
-
 
 **Attention:** Only use if you are sure of what you are doing on Testnet/Mainnet. You could put your funds at risk. It is recommended to install on new accounts.
 
 This hook tries to solve the problem of spam generated in other similar networks such as XRP Ledger in which attackers send very small payments to send a message to the account owners.
 
-The blocking offered by this hook is based on two criteria, currency and amount minimum.
+The blocking offered by this hook is based on two criteria, currency and minimum amount accepted.
 
 There are two basic groups to differentiate currencies, we will separate between XAH and IOUs.
 
-The hook offers the possibility to use XAH and IOU as general blocking criteria together with a minimum accepted amount.
+The hook offers the possibility to use XAH and IOU as general blocking criteria with a minimum accepted amount.
 
-This allows us to declare that we do not accept an amount less than 1 XAH and that we do not accept an amount less than 2 for IOUs.
+This allows us to declare that we do not accept an amount less than 1 XAH and that we do not accept an amount less than 2 for IOUs, for example.
 
 As IOUs have different supplies and a general criterion may not be enough, it is allowed to specify a specific IOU and the minimum accepted quantity. For this we will need the code currency of the IOU and its issuer and the minimum quantity accepted.
 
-Note: If we have a general IOU criterion defined and several specific IOUs defined. The hook will ignore the general criteria defined for IOUs for the specific IOUs, being the individual criteria the only one that will affect them.
+**Note:** If we have a general IOU criterion defined and several specific IOUs defined. The hook will ignore the general criteria defined for IOUs for the specific IOUs, being the individual criteria the only one that will affect them.
 
 To define a general criterion we will use an Invoke transaction from the hook account. Using the Hook Param XAH and the value in drops minimum accepted. 1000000 drops = 1 XAH. 
 
-If we want to create a general criterion for IOUs, we will create an Invoke from the hook account. Using the Hook Param IOU and the value in minimum drops accepted. 1000000 drops = 1 IOU. 
+If we want to create a general criterion for IOUs, we will create an Invoke transaction from the hook account. Using the Hook Param IOU and the value in minimum drops accepted. 1000000 drops = 1 IOU. 
 
-If we want to add a specific IOU/Token we must create an Invoke from the hook account. As Hook Param we will use IOU and the value in drops minimum accepted, the Hook Param CODE with the value in hexadecimal of the xrpCurrency and the Hook Param ISSUER with the address of the issuer in hexadecimal. The formats are specified below.
+If we want to add a specific IOU/Token we must create an Invoke transaction from the hook account. As Hook Param we will use IOU and the value in drops minimum accepted, the Hook Param CODE with the value in hexadecimal of the xrpCurrency and the Hook Param ISSUER with the address of the issuer in hexadecimal. The formats are specified below.
 
 If we want to update any value of any of the previous options, we simply run another Invoke with the new drops number.
 
 If we want to delete any of the registers, we only have to add as drops value “0000000000000000” and we will delete this register from our hook.
 
-Note: Remember that if you delete a specific IOU rule, you will still be affected by the general IOU rule if you have it enabled for that token as well.
+**Note:** Remember that if you delete a specific IOU rule, you will still be affected by the general IOU rule if you have it enabled for that token as well.
 
 
 
@@ -122,7 +121,7 @@ Once the hook is installed, the following triggers are expected for the hook.
 
 ## How to install the Highest Number Hook on Testnet?
 
-HookHash: F6DFD7D903013DE4D2D000549D1F38910C62A489F784AD2171FB156AFF3B3819
+HookHash: CE8477A94BE00A9EEDA46FB519617FCE3D119914AEAEFAD15D9E434323B112AB
 
 1. You can do it by [XRPLWin Hook Install Tool](https://xahau-testnet.xrplwin.com/tools/hook/from-hash)
 
@@ -137,7 +136,7 @@ HookOn is activated to trigger for Invoke and Payment transactions. You can veri
       "Hooks": [
         {
           "Hook": {
-            "HookHash": "F6DFD7D903013DE4D2D000549D1F38910C62A489F784AD2171FB156AFF3B3819",
+            "HookHash": "CE8477A94BE00A9EEDA46FB519617FCE3D119914AEAEFAD15D9E434323B112AB",
             "HookNamespace": "0000000000000000000000000000000000000000000000000000000000000000",
             "HookOn": "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF7FFFFFFFFFFFFFFFFFFBFFFFE",
           }
